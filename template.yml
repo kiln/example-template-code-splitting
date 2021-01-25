@@ -1,0 +1,10 @@
+id: template-example-code-splitting
+name: Code splitting example
+sdk_version: 3
+
+build:
+  src:
+    watch: npm run watch
+    script: npm run build
+
+settings: []

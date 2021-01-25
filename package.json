@@ -1,0 +1,23 @@
+{
+  "name": "template-example-code-splitting",
+  "main": "src/index.js",
+  "author": "Flourish team",
+  "scripts": {
+    "prepare": "(test -f template.js || test -n \"$CI\") || npm run build",
+    "start": "flourish run",
+    "build": "npm-run-all -s clean build:*",
+    "build:loader": "rollup -c rollup.loader.js",
+    "build:index": "rollup -c",
+    "watch": "npm-run-all -p clean watch:*",
+    "watch:loader": "npm run watch:index -- rollup.loader.js",
+    "watch:index": "rollup --no-treeshake --no-indent --no-watch.clearScreen -wc",
+    "clean": "rm -rf static/*.js"
+  },
+  "devDependencies": {
+    "@flourish/sdk": "^3.15.1",
+    "@rollup/plugin-replace": "^2.3.4",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^2.38.0",
+    "systemjs": "^6.8.3"
+  }
+}
